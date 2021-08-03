@@ -6,6 +6,39 @@ currentDay.text(today.format("dddd, MMMM Do YYYY"));
 
 // Timeblock colour code
 
+// a)add in function to find current hour??
+
+
+
+// b)if statement
+const toDo = parseInt("past")
+const pr
+  if 
+    ("currentTime == timeOfDay")
+    class{"present"}
+  else if
+    ("currentTime< timeofDay")
+    {class{"future"} 
+  } else
+    {class{"past"}
+
+
+
+// .past {
+//     background-color: #d3d3d3;
+//     color: white;
+//   }
+  
+//   .present {
+//     background-color: #ff6961;
+//     color: white;
+//   }
+  
+//   .future {
+//     background-color: #77dd77;
+//     color: white;
+//   }
+
 
 
 
