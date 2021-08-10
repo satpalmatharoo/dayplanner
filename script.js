@@ -1,38 +1,40 @@
 //1 Add current day to top of calendar /Excerise 26
 
-var currentDay =$("#currentDay");
-var today = moment ();
-currentDay.text(today.format("dddd, MMMM Do YYYY"));
-var currentHour = today.hours ()
-console.log (currentHour)
+var currentDay = $("#currentDay");
 
+// Get current date and time and update UI
+var today = moment();
+currentDay.text(today.format("dddd, MMMM Do YYYY"));
+var currentHour = today.hours();
+console.log(currentHour);
 
 //2 Timeblock colour code
-    // a)add in function to find current hour
-    // b)if statement
-  
-  for (let i = 9; i <18; i++){
-     if 
-   (currentHour == i) {
-    $(`#${i}`).addClass("future")
+// a)add in function to find current hour
+// b)if statement
 
-   }else if (currentHour < i) {
-    $(`#${i}`).addClass("past")
-
-   }else{
-    $(`#${i}`).addClass("present")
-
+for (let i = 9; i < 18; i++) {
+  if (currentHour == i) {
+    $(`#${i}`).addClass("future");
+  } else if (currentHour < i) {
+    $(`#${i}`).addClass("past");
+  } else {
+    $(`#${i}`).addClass("present");
   }
-  }
-    
+}
+
+$('.saveBtn').click((event) => {
+  event.stopPropagation();
+  const timeblock = $(event.target).parent();
+  const time = timeblock.attr('id');
+  const description = timeblock.find('.description').val();
+  localStorage.setItem(time, description);
+});
+
 // Add Local Storage
-localStorage.setItem("timeblock", "event");
-
 
 // WHEN I click into a timeblock
 // THEN I can enter an event
 // WHEN I click the save button for that timeblock
-
 
 // THEN the text for that event is saved in local storage
 // WHEN I refresh the page
