@@ -6,19 +6,17 @@ var currentDay = $("#currentDay");
 var today = moment();
 currentDay.text(today.format("dddd, MMMM Do YYYY"));
 var currentHour = today.hours();
-console.log(currentHour);
-
 //2 Timeblock colour code
 // a)add in function to find current hour
 // b)if statement
 
-for (let i = 9; i < 18; i++) {
+for (let i = 9; i <= 17; i++) {
   if (currentHour == i) {
-    $(`#${i}`).addClass("future");
-  } else if (currentHour < i) {
-    $(`#${i}`).addClass("past");
-  } else {
     $(`#${i}`).addClass("present");
+  } else if (currentHour < i) {
+    $(`#${i}`).addClass("future");
+  } else {
+    $(`#${i}`).addClass("past");
   }
 }
 
